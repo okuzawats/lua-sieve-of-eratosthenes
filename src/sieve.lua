@@ -2,6 +2,8 @@
 -- @param n 対象となる整数。正の値である必要がある。
 -- @return n以下の整数のうち、素数のみを格納した配列。
 function sieve(n)
+  assert(n > 0, "n must be positive.")
+
   local sieve = {} -- 判定対象となる整数値を格納する配列（「篩（ふるい）」と呼ぶ）
   local prime = {} -- 素数と判定された整数値を格納する配列
 
