@@ -5,6 +5,10 @@ function sieve(n)
   local sieve = {} -- 判定対象となる整数値を格納する配列（「篩（ふるい）」と呼ぶ）
   local prime = {} -- 素数と判定された整数値を格納する配列
 
+  -- n = 2、n = 3の時に正しく動いていないことに気付いたので、そのバグを回避するためのコード。
+  if n == 2 then return { 2 } end
+  if n == 3 then return { 2, 3 } end
+
   -- 篩をtrueで初期化する。1はスキップして良い。
   for i = 2, n do
     sieve[i] = true
